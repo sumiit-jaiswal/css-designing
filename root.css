@@ -1,0 +1,275 @@
+:root {
+  --font-family: Roboto, sans-serif;
+
+  /* input variables */
+  --input-border-radius: 2px;
+  --input-width: 320px;
+
+  /* for large input */
+
+  --input-padding-large: 8px 12px;
+  --input-height-large: 40px;
+  --input-gap-large: 4px;
+
+
+  /* button variables */
+
+  --button-gap: 8px;
+  --button-border-radius: 2px;
+  --button-height: 32px;
+  --button-width: 74px;
+
+  /* for default size */
+  --button-padding-default: 5px 16px;
+
+  /* colors and shadow*/
+  --gray-1: #FFFFFF;
+  --gray-3: #f5f5f5;
+  --gray-5: #D9D9D9;
+  --gray-6: #bfbfbf;
+  --gray-7: #8c8c8c;
+  --gray-9: #262626;
+  --blue-5: #40a9ff;
+  --blue-6: #1890ff;
+  --blue-7: #096DD9;
+
+  --blue-shadow: 0px 0px 4px 0px #1890ff80;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+}
+
+/* common css classes */
+
+/* typography */
+
+.p-16 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.p-14 {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.p-12 {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+}
+
+.regular{
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+/* atomic css for main container which can be reused*/
+
+.br-8 {
+  border-radius: 8px;
+}
+
+.border-2px-blue {
+  border: 2px solid var(--blue-7)
+}
+
+.p-20 {
+  padding: 20px;
+}
+
+.m-10 {
+  margin: 10px;
+}
+.h-100vh {
+  height: 100vh;
+}
+.w-100vw {
+  width: 100vw;
+}
+
+.margin-centre {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.flex-centre {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dis-none{
+  display: none;
+}
+
+/* atomic css for icon */
+
+
+.icon-left {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.user-icon {
+  position: relative;
+  width: 18px;
+  height: 18px;
+
+}
+
+/* animation for loading icon */
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
+.loading-icon{
+  display: unset;
+  height: 16px;
+  width: 16px;
+  animation: rotate 2s linear infinite;
+}
+
+
+
+
+/* .icon-right {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+} */
+
+
+
+/* atomic css for input field */
+
+/* common for all input */
+
+
+
+.input {
+  width: var(--input-width);
+  border-radius: var(--input-border-radius);
+
+  border: 1px solid var(--gray-5);
+  background-color: var(--gray-1);
+  box-sizing: border-box;
+}
+
+/* not pseudo class is used so that hover state background color do not override other classes */
+
+.input:not(.input-focused):not(.input-disabled):hover {
+  border: 1px solid var(--blue-5);
+}
+
+input:focus {
+  outline: none;
+}
+
+input {
+  color: var(--gray-7);
+}
+
+input:focus {
+  color: var(--gray-9);
+}
+
+.input-focused {
+  border: 1px solid var(--blue-6);
+  box-shadow: var(--blue-shadow);
+}
+
+.input-filled{
+  color: var(--gray-9);
+}
+
+.input-disabled{
+  background-color: var(--gray-3);
+  color: var(--gray-6);
+}
+
+/* for large input */
+
+.input-large {
+  height: var(--input-height-large);
+  padding: var(--input-padding-large);
+  gap: var(--input-gap-large);
+}
+
+.placeholder-large {
+  width: 274px;
+  height: 24px;
+  border: none;
+}
+
+
+/* atomic css for buttons */
+
+.button {
+  cursor: pointer;
+  border: none;
+}
+
+button:focus{
+  outline: none;
+}
+
+
+/* for primary buttons */
+
+.button-primary{
+  border-radius: var(--button-border-radius);
+  color: var(--gray-1);
+  background-color: var(--blue-6);
+}
+
+/* for default size buttons */
+.button-size-default {
+  padding: var(--button-padding-default);
+  gap: var(--button-gap);
+
+}
+
+/* not pseudo class is used so that hover state background color do not override other classes */
+/* primary button hover, pressed loading and disable effect which can be reused for any primary button */
+
+.button-primary:hover:not(.button-primary-loading):not(.button-primary-disabled):not(.button-primary-pressed) {
+  background-color: var(--blue-5);
+}
+
+.button-primary-pressed{
+  background-color: var(--blue-7);
+}
+
+.button-primary-loading{
+  background-color: var(--blue-6);
+  opacity: 65%;
+  cursor: not-allowed;
+}
+
+.button-primary-disabled{
+  border: var(--gray-5);
+  background-color: var(--gray-3);
+  color: var(--gray-6);
+  cursor: not-allowed;
+}
+
+
+/* animation for loading circle */
+
+
+
